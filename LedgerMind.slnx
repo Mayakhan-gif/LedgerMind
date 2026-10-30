@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="LedgerMind.csproj" />
+  <Project Path="tests/LedgerMind.Tests/LedgerMind.Tests.csproj" />
+</Solution>

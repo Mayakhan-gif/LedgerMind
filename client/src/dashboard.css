@@ -1,0 +1,33 @@
+/* Dashboard */
+.dash-head h1 { font-size: 24px; font-weight: 600; letter-spacing: -0.02em; }
+.dash-head p { margin-top: 4px; font-size: 14px; }
+
+.stat-link {
+  text-align: left; color: inherit; font: inherit; cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s;
+}
+.stat-link:hover { transform: translateY(-2px); border-color: var(--accent); }
+.stat-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.stat .sub { max-width: none; }
+
+.dash-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 14px; }
+.dash-card { padding: 18px 20px; display: flex; flex-direction: column; gap: 12px; border-radius: 18px; animation: rise 0.4s ease; }
+.dash-card header { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.dash-card h3 { font-size: 15px; font-weight: 600; }
+.dash-list { list-style: none; padding: 0; display: flex; flex-direction: column; }
+.dash-list li {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 14px;
+}
+.dash-list li:last-child { border-bottom: 0; }
+.dash-list .item-main { min-width: 0; display: flex; flex-direction: column; }
+.dash-list .item-main strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.dash-list .item-side { flex: none; text-align: right; font-variant-numeric: tabular-nums; }
+.dash-empty { padding: 14px 0; font-size: 14px; }
+.dash-error { font-size: 13px; color: #ff8a8a; }
+
+@media (max-width: 800px) {
+  .chat-layout .nav-item { min-width: 0; padding: 8px 2px; font-size: 11px; }
+  .chat-layout .nav-item svg { width: 16px; height: 16px; }
+  .dash-grid { grid-template-columns: 1fr; }
+}

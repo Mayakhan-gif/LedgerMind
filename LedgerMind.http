@@ -1,0 +1,77 @@
+# LedgerMind API ke namoone (Visual Studio / VS Code REST Client / Rider).
+# 1) "Login" wali request chalayein.
+# 2) Jawab ka "token" neeche @token me paste karein (15 minute chalta hai; phir dobara login).
+# Asal password yahan commit na karein.
+# "http" launch profile: @host = http://localhost:5194 (neeche wala).
+# "https" launch profile: @host = https://localhost:7210 rakhein. Warna UseHttpsRedirection 307 deta hai
+# aur kuch REST clients redirect par Authorization header gira dete hain (phir 401).
+
+@host = http://localhost:5194
+@token = paste-access-token-here
+
+### Health (public): app + database ka haal (200 Healthy / 503 Unhealthy)
+GET {{host}}/api/Health
+Accept: application/json
+
+### Login (token aur refreshToken milta hai)
+POST {{host}}/api/Auth/login
+Content-Type: application/json
+Accept: application/json
+
+{
+  "email": "admin@ledgermind.local",
+  "password": "your-password-here"
+}
+
+### Login user ki maloomat aur roles
+GET {{host}}/api/Auth/me
+Authorization: Bearer {{token}}
+Accept: application/json
+
+### Invoices ki list
+GET {{host}}/api/Invoices
+Authorization: Bearer {{token}}
+Accept: application/json
+
+### Approval ke intezar me invoices aur expenses (Admin / FinanceManager)
+GET {{host}}/api/Approvals/pending
+Authorization: Bearer {{token}}
+Accept: application/json
+
+### Reports summary (Admin / FinanceManager)
+GET {{host}}/api/Reports/summary
+Authorization: Bearer {{token}}
+Accept: application/json
+
+### Chatbot se sawal
+POST {{host}}/api/Chat
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "message": "Show my pending tasks",
+  "history": []
+}
+
+### Audit log, filters ke saath (Admin)
+GET {{host}}/api/Audit?entityType=Invoice&take=50
+Authorization: Bearer {{token}}
+Accept: application/json
+
+### Invoice reminder emails ke logs (Admin)
+GET {{host}}/api/Email/logs?type=InvoiceReminder&take=20
+Authorization: Bearer {{token}}
+Accept: application/json
+
+### Overdue check foran chalayein (Admin): 202 { message, jobId }
+POST {{host}}/api/Jobs/run-overdue-check
+Authorization: Bearer {{token}}
+Accept: application/json
+
+### Purane refresh tokens ki safai foran chalayein (Admin): 202 { message, jobId }
+POST {{host}}/api/Jobs/run-token-cleanup
+Authorization: Bearer {{token}}
+Accept: application/json
+
+###

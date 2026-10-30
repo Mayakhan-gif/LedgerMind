@@ -1,0 +1,66 @@
+/* Manager tools page. Uses the app's design tokens, with safe fallbacks. */
+.mgr { padding: 8px 4px 40px; color: var(--text, #eceef5); }
+.mgr h1 { font-size: 22px; margin: 0 0 4px; }
+.mgr h2 { font-size: 16px; margin: 0; }
+.mgr h3 { font-size: 14px; margin: 22px 0 8px; color: var(--muted, #8b90a3); font-weight: 600; }
+.mgr-head p, .mgr-help { color: var(--muted, #8b90a3); font-size: 13px; margin: 4px 0 12px; line-height: 1.5; }
+
+.mgr-tabs { display: flex; gap: 6px; flex-wrap: wrap; margin: 14px 0 12px; }
+.mgr-tab {
+  background: var(--panel, rgba(255,255,255,.04)); color: var(--muted, #8b90a3);
+  border: 1px solid var(--border, rgba(255,255,255,.1)); border-radius: 10px;
+  padding: 8px 14px; font: inherit; font-size: 13px; cursor: pointer;
+}
+.mgr-tab.on { color: var(--text, #eceef5); border-color: var(--accent, #7c8cff); background: rgba(124,140,255,.14); }
+
+.mgr-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 6px; }
+.mgr-toolbar-right { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+
+.mgr-btn {
+  background: var(--panel, rgba(255,255,255,.05)); color: var(--text, #eceef5);
+  border: 1px solid var(--border, rgba(255,255,255,.14)); border-radius: 8px;
+  padding: 6px 12px; font: inherit; font-size: 12.5px; cursor: pointer; white-space: nowrap;
+}
+.mgr-btn:hover:not(:disabled) { border-color: var(--accent, #7c8cff); }
+.mgr-btn:disabled { opacity: .5; cursor: not-allowed; }
+.mgr-btn.ok { background: rgba(60,190,140,.16); border-color: rgba(60,190,140,.5); }
+.mgr-btn.danger { background: rgba(240,100,90,.14); border-color: rgba(240,100,90,.5); }
+
+.mgr-input {
+  background: rgba(255,255,255,.04); color: var(--text, #eceef5);
+  border: 1px solid var(--border, rgba(255,255,255,.14)); border-radius: 8px;
+  padding: 7px 10px; font: inherit; font-size: 13px; min-width: 0;
+}
+.mgr-input:focus { outline: 2px solid var(--accent, #7c8cff); outline-offset: 0; }
+
+.mgr-note {
+  margin: 10px 0; padding: 10px 14px; border-radius: 10px; font-size: 13px; line-height: 1.5;
+  background: var(--panel, rgba(255,255,255,.04)); border: 1px solid var(--border, rgba(255,255,255,.1));
+}
+.mgr-note.ok { border-color: rgba(60,190,140,.5); background: rgba(60,190,140,.12); }
+.mgr-note.err { border-color: rgba(240,100,90,.55); background: rgba(240,100,90,.12); }
+
+.mgr-table-wrap { overflow-x: auto; border: 1px solid var(--border, rgba(255,255,255,.1)); border-radius: 12px; background: var(--panel, rgba(255,255,255,.03)); }
+.mgr-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.mgr-table th { text-align: left; color: var(--muted, #8b90a3); font-weight: 600; font-size: 11.5px; letter-spacing: .04em; text-transform: uppercase; padding: 10px 12px; border-bottom: 1px solid var(--border, rgba(255,255,255,.1)); }
+.mgr-table td { padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,.05); vertical-align: middle; }
+.mgr-table tr:last-child td { border-bottom: 0; }
+.mgr-actions { display: flex; gap: 6px; flex-wrap: wrap; }
+.mgr-small { color: var(--muted, #8b90a3); font-size: 12px; max-width: 260px; }
+
+.mgr-badge { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: 11.5px; background: rgba(255,255,255,.08); }
+.mgr-s-approved, .mgr-s-paid, .mgr-s-succeeded { background: rgba(60,190,140,.2); color: #7be0b8; }
+.mgr-s-partial, .mgr-s-pendingapproval, .mgr-s-pending, .mgr-s-needsreview { background: rgba(245,190,90,.2); color: #f5c26b; }
+.mgr-s-rejected, .mgr-s-cancelled, .mgr-s-failed, .mgr-s-expired { background: rgba(240,100,90,.2); color: #ff9a90; }
+.mgr-s-draft, .mgr-s-refunded, .mgr-s-resolved { background: rgba(255,255,255,.1); }
+.mgr-tag { margin-left: 6px; font-size: 10.5px; color: var(--muted, #8b90a3); border: 1px solid var(--border, rgba(255,255,255,.14)); border-radius: 6px; padding: 1px 6px; }
+
+.mgr-form { display: flex; flex-direction: column; gap: 6px; margin: 10px 0 14px; max-width: 720px; }
+.mgr-form label { display: flex; flex-direction: column; gap: 4px; font-size: 12px; color: var(--muted, #8b90a3); }
+.mgr-form.row { flex-direction: row; flex-wrap: wrap; align-items: flex-end; gap: 10px; max-width: none; }
+.mgr-form.row label { min-width: 140px; }
+
+.mgr-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 12px 0; }
+.mgr-card { background: var(--panel, rgba(255,255,255,.04)); border: 1px solid var(--border, rgba(255,255,255,.1)); border-radius: 12px; padding: 12px 14px; display: flex; flex-direction: column; gap: 4px; }
+.mgr-card span { color: var(--muted, #8b90a3); font-size: 12px; }
+.mgr-card strong { font-size: 16px; }

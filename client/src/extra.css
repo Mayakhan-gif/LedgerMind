@@ -1,0 +1,15 @@
+/* Tasks aur Expenses ke badges */
+.s-submitted { color: #f5c26b; background: rgba(245, 194, 107, 0.14); }
+.s-todo { color: #9aa0b4; background: rgba(154, 160, 180, 0.14); }
+.s-inprogress { color: #7cb7ff; background: rgba(124, 183, 255, 0.14); }
+.s-done { color: #6fe0a0; background: rgba(111, 224, 160, 0.14); }
+.p-low { color: #9aa0b4; background: rgba(154, 160, 180, 0.14); }
+.p-medium { color: #7cb7ff; background: rgba(124, 183, 255, 0.14); }
+.p-high { color: #ff8a8a; background: rgba(255, 107, 107, 0.14); }
+
+/* Row ke neeche chhota text */
+.sub { display: block; margin-top: 3px; font-size: 12px; font-weight: 400; color: var(--muted); white-space: normal; max-width: 340px; }
+
+/* Row ke andar chhota dropdown */
+.row-select { padding: 6px 10px; font-size: 13px; border-radius: 10px; }
+.row-select:disabled { opacity: 0.6; cursor: wait; }

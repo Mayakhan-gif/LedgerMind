@@ -1,0 +1,18 @@
+/* Integrations page */
+.int-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 14px; }
+.int-card { padding: 20px; display: flex; flex-direction: column; gap: 12px; border-radius: 18px; animation: rise 0.4s ease; }
+.int-card h3 { font-size: 16px; font-weight: 600; }
+.int-card p { font-size: 14px; line-height: 1.5; }
+.int-status { display: flex; align-items: center; gap: 10px; font-size: 14px; }
+.dot { width: 9px; height: 9px; border-radius: 50%; background: #8b90a3; flex: none; }
+.dot.on { background: #6fe0a0; box-shadow: 0 0 0 4px rgba(111, 224, 160, 0.15); }
+.int-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+.demo-banner {
+  padding: 12px 16px; border-radius: 12px; font-size: 13px; line-height: 1.5;
+  color: #f5c26b; background: rgba(245, 194, 107, 0.1); border: 1px solid rgba(245, 194, 107, 0.25);
+}
+
+/* Xero ke status badges */
+.s-authorised { color: #7cb7ff; background: rgba(124, 183, 255, 0.14); }
+.s-voided, .s-deleted { color: #ff8a8a; background: rgba(255, 107, 107, 0.14); }
+.s-submitted { color: #f5c26b; background: rgba(245, 194, 107, 0.14); }
