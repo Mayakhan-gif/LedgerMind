@@ -363,3 +363,4 @@ MigrationBackup/
 FodyWeavers.xsd
 # Data Protection key ring (Xero tokens isi se encrypt hote hain) - kabhi commit na karein
 App_Data/
+publish/
